@@ -6,8 +6,6 @@
 Adversarial loss 
 	In addition to content loss, adversarial loss is a generative component added to the perceptual loss. It represents the generative component of our GAN. The generative loss is defined based on the probabilities of the discriminator over all the training samples. 
              
-where, the probability that the reconstructed super resolution image is the real high- resolution image is given by DθD ( GθG ( ILR ) ).
-
  Perceptual loss function 
 	The sum of content loss and adversarial loss is formulated as perceptual loss.
 Generator and Discriminator models in the project
