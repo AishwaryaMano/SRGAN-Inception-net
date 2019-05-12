@@ -2,15 +2,10 @@
  Losses
 	Content loss 
 	The Euclidean distance between the feature representations of a reconstructed image and the reference image gives the VGG loss. We make use of the feature map obtained by jth  convolution in ith max pooling layer in calculating the VGG loss. Instead of calculating pixel-wise MSE loss, which gives high PSNR but lacks content of high frequency, we use loss function closer to a perceptual similarity. 
-
-			     Wi,j  Hi,j
-lSRVGG/ i,j  = ( 1/Wi,jHi,j ) ∑     ∑   (фi,j (IHR)x,y – фi,j ( GθG ( ILR ) )x,y )^2
-		             x=1   y=1
+			   
 Adversarial loss 
 	In addition to content loss, adversarial loss is a generative component added to the perceptual loss. It represents the generative component of our GAN. The generative loss is defined based on the probabilities of the discriminator over all the training samples. 
-               N		                  
-    lSRgn  =   ∑  -log DθD ( GθG ( ILR ) )
-              n=1
+             
 where, the probability that the reconstructed super resolution image is the real high- resolution image is given by DθD ( GθG ( ILR ) ).
 
  Perceptual loss function 
